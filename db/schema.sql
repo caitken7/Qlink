@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS Users;
 
 # Create the users table
 CREATE TABLE Users (
-  user_id INT NOT NULL AUTO_INCREMENT,
+  id INT NOT NULL AUTO_INCREMENT,
   email VARCHAR(80) NOT NULL,
   first_name VARCHAR(25) NOT NULL,
   last_name VARCHAR(25) NOT NULL,
@@ -20,7 +20,9 @@ CREATE TABLE Users (
   linkedin VARCHAR(50),
   twitter VARCHAR(50),
   other_website VARCHAR(50),
-  user_photo VARCHAR(100)
+  user_photo VARCHAR(100),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 
   PRIMARY KEY (user_id),
   UNIQUE INDEX (email)
